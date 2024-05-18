@@ -1,6 +1,6 @@
-export default function handleResponseFromAPI(promise) {
+function handleResponseFromAPI(promise) {
   return new Promise((resolve, reject) => {
-    resolve(promise);
+    resolve();
   });
 }
 
@@ -21,4 +21,5 @@ function logResponse() {
 }
 
 const myprom = handleResponseFromAPI(promise)
-myprom.then(resolvePromise, rejectPromise).finally(logResponse);
+const mypromise = myprom.then(resolvePromise, rejectPromise).finally(logResponse);
+export default mypromise;
