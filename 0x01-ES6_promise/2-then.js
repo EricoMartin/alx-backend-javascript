@@ -13,3 +13,4 @@ export default function handleResponseFromAPI(promise) {
     .finally(function logResponse() {
       console.log('Got a response from the API');
     });
+}
