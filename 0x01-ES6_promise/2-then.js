@@ -21,4 +21,6 @@ function rejectPromise() {
 function logResponse() {
   console.log('Got a response from the API');
 }
-handleResponseFromAPI(resolvePromise).then(logResponse).catch(rejectPromise);
+
+const myprom = handleResponseFromAPI(promise)
+myprom.then(resolvePromise, rejectPromise).finally(logResponse);
