@@ -1,3 +1,3 @@
 export default const getResponseFromAPI => () {
-  return new Promise(1);
+  return new Promise((resolve) => resolve(1));
 }
