@@ -15,20 +15,20 @@ const app = http.createServer(async (req, res) => {
   const { url } = req;
 
   if (url === '/') {
+    res.statusCode = 200;
     res.write('Hello Holberton School!');
   } else if (url === '/students') {
+    res.statusCode = 200;
     res.write('This is the list of our students\n');
     try {
       const students = await countStudents(DATABASE);
       res.end(`${students}`);
-      res.statusCode = 200;
     } catch (error) {
       res.end(error.message);
     }
-  } else {
-    res.statusCode = 404;
-    res.end('Not Found');
-  }
+  } 
+  res.statusCode = 404;
+  res.end();
 });
 
 app.listen(port, hostname, () => {
