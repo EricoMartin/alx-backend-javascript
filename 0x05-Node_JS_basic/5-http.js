@@ -19,14 +19,15 @@ const app = http.createServer(async (req, res) => {
   } else if (url === '/students') {
     res.write('This is the list of our students\n');
     try {
-      const students = await countStudents(DATABASE);
-      res.end(`${students.join('\n')}`);
+      const students = await countStudents(DATABASE);      
+      res.end(`${students}`);
     } catch (error) {
       res.end(error.message);
     }
+  } else {
+    res.statusCode = 404;
+    res.end('Not Found');
   }
-  res.statusCode = 404;
-  res.end();
 });
 
 app.listen(port, hostname, () => {
