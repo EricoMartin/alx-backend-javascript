@@ -21,6 +21,7 @@ const app = http.createServer(async (req, res) => {
     try {
       const students = await countStudents(DATABASE);      
       res.end(`${students}`);
+     // res.statusCode = 200;
     } catch (error) {
       res.end(error.message);
     }
