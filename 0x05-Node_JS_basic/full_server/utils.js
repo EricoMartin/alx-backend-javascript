@@ -23,6 +23,6 @@ const readDatabase = (path) => {
       }
     }); 
   });
-});
+};
 
 module.exports = readDatabase;
