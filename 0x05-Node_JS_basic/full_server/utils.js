@@ -13,16 +13,14 @@ const studentObj = (data) => data.slice(1).reduce(
   { cs: [], swe: [] },
 );
 
-const readDatabase = (path) => {
-  return new Promise((resolve, reject) => {
-   fs.readFile(path, 'utf8', (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(studentObj(data.split('\n')));
-      }
-    }); 
+const readDatabase = (path) => new Promise((resolve, reject) => {
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(studentObj(data.split('\n')));
+    }
   });
-};
+});
 
 module.exports = readDatabase;
