@@ -114,4 +114,4 @@ describe("Login", function() {
 	    done();
 	});
     });
-};
+});
