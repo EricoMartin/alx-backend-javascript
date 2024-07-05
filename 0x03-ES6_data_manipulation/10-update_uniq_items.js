@@ -1,4 +1,3 @@
-
 const updateUniqueItems = (map) => {
   if (map instanceof Map) {
     for (const [key, value] of map.entries()) {
@@ -12,4 +11,3 @@ const updateUniqueItems = (map) => {
 };
 
 export default updateUniqueItems;
-
